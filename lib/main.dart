@@ -43,6 +43,7 @@ class CatsFacts extends StatelessWidget {
     final api = FactGetter(Dio());
     return MultiBlocProvider(
       providers: [
+        // invoke event of the app start
         BlocProvider(create: (context) => FactBloc(api)..add(AnotherFactEvent())),
       ],
       child: MaterialApp(
